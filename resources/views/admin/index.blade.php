@@ -11,6 +11,9 @@
 
             <label for="photo" class="text-capitalize">Enter your food item photo</label><br>
             <input value="{{old('photo')}}" type="file" name="photo" class="form-control form-control-lg"><br>
+            @error('photo')
+                <p class="text-warning">{{$message}}</p>
+            @enderror
 
             <label for="name" class="text-capitalize">Enter your food item name</label><br>
             <input value="{{old('name')}}" type="text" name="name" class="form-control form-control-lg">

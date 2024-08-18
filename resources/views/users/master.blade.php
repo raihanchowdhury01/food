@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ asset('img/logo.jpg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/logo.jpeg') }}" type="image/x-icon">
     <meta name="keywords" content="food review, health tips">
     <meta name="description" content="Food category review || This review help to you for choose the best healthy food item">
     <meta name="author" content="Raihan Chowdhury">
@@ -31,7 +31,7 @@
     <header>
         <div class="d-flex justify-content-between py-3 px-5 bg-primary text-white align-items-center">
             <div>
-                <img style="width: 20%;" src="{{ url('img/logo.jpg') }}" alt="there is a logo image">
+                <img style="weight: 60px; height: 60px; border-radius: 100%" src="{{ url('img/logo.jpeg') }}" alt="there is a logo image">
             </div>
             <div>
                 <div class="d-none d-md-block">
@@ -65,6 +65,9 @@
 
     {{-- main section design start form here --}}
     <main>
+        {{-- search section design start from here --}}
+
+        {{-- search section design end from here --}}
         @yield('content')
     </main>
     {{-- main section design end form here --}}
@@ -94,7 +97,7 @@
 
             <div style="text-align: center;">
 
-            <img alt="contact-us" style="width: 200px" src="/img/email_us.png">
+            <img alt="contact-us" style="width: 200px; border-radius: 100%" src="img/email.jpeg">
 
             <p><i class="fas fa-envelope-open-text" style="color: #2c3e50; font-size: 20px;"></i> <b><i> <span id="W_Email"><a href="mailto:raihan24969@gmail.com">raihan24969@gmail.com</a></span></i></b><br>
             <h3 style="color: #3e005d;">We will revert you as soon as possible...!</h3>

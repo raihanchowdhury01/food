@@ -21,7 +21,7 @@
             <p class="text-capitalize py-3 fs-4">Components of this food:</p>
           </div>
           <div>
-            <ul>
+            <ul class="list-unstyled">
               @foreach(explode('||', $item->componentDescription) as $line)
                 <li>{{ $line }}</li>
               @endforeach
@@ -32,7 +32,11 @@
             <p class="text-capitalize py-3 fs-4">Positive Side of this food:</p>
           </div>
           <div>
-            <p>{{ $item->positiveDescription }}</p>
+            <ul class="list-unstyled">
+              @foreach(explode('||', $item->positiveDescription) as $line)
+                <li>{{ $line }}</li>
+              @endforeach
+            </ul>
           </div>
         
           {{-- Negative description --}}
