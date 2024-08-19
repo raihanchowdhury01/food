@@ -27,6 +27,7 @@ Route::get('admin/dashboard/input', [AdminController::class, 'input'])->middlewa
 Route::post('item/added', [AdminController::class, 'store'])->middleware(['auth', 'admin'])->name('storePage');
 Route::put('{id}/', [AdminController::class, 'update'])->middleware(['auth', 'admin'])->name('updatePage');
 Route::get('delete/{id}', [AdminController::class, 'deleted'])->middleware(['auth', 'admin']);
+Route::get('search/item', [AdminController::class, 'search'])->middleware(['auth', 'admin'])->name('searchItem');
 
 
 
@@ -38,3 +39,6 @@ Route::get('protein', [UserController::class, 'Proteins']);
 Route::get('fat', [UserController::class, 'Savory']);
 Route::get('view/{id}', [UserController::class, 'details']);
 Route::get('privacy/policy', [UserController::class, 'rules']);
+
+
+Route::get('search/food', [UserController::class, 'search'])->name('searchItem');

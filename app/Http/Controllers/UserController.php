@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index(){
-        $data = Item::orderBy('created_at', 'DESC')->cursorPaginate(1);
+        $data = Item::orderBy('created_at', 'DESC')->cursorPaginate(20);
         return view('users.index', ['items' => $data]);
     }
 
@@ -44,5 +44,11 @@ class UserController extends Controller
     public function details($id){
         $data = Item::find($id);
         return view('users.views', ['item' => $data]);
+    }
+
+    public function search(Request $request){
+        $search = $request->search;
+        $items = Item::where('Name', 'LIKE','%'.$search.'%')->orWhere('Title', 'LIKE','%'.$search.'%')->cursorPaginate(20);
+        return view('users.index', compact('items'));
     }
 }

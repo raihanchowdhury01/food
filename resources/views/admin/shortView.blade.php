@@ -1,38 +1,57 @@
 @extends('admin.master')
 @section('title')
-    view page
+    Short item view page
 @endsection
 
 @section('content')
-    @if ($items->isNotEmpty())
-        @foreach ($items as $item)
-            <div class="w-75 mx-auto">
-                <div class="mt-5 w-50 mx-auto">
-                    <img class="smd_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="This is a pizza">
-                    <p class="text-center w-75 text-capitalize ps-5">{{$item->Name}}</p>
-                </div>
-                <div>
-                    {{-- title --}}
-                    <div>
-                        <h1>{{$item->Title}}</h1>
-                    </div>
-                    {{-- short description --}}
-                    <div>
-                        @if (strlen($item->positiveDescription) > 500 || strlen($item->positiveDescription) < 500)
-                            <p>{{ substr($item->positiveDescription, 0, 500) }}...</p>
-                        @else
-                            <p>{{ $item->positiveDescription }}</p>
-                        @endif
+  {{-- search bar section design start from here --}}
+  <form action="{{ route('searchItem') }}" method="GET">
+    @csrf
 
-                        <a href="{{ url('view', $item->id) }}" class="btn btn-primary">See Details</a>
-                        <a href="{{ url('edit', $item->id) }}" class="btn btn-warning">Edit Details</a>
-                        <a href="{{ url('delete', $item->id) }}" class="btn btn-danger">Edit Details</a>
-                    </div>
-                </div>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="input-group">
+            <input type="search" name="search" class="form-control" placeholder="Search...">
+            <div class="input-group-append">
+              <input type="submit" value="Search" class="btn btn-primary">
             </div>
-            @endforeach
-            <div class="mt-5 py-5 text-center">
-                {{$items->links()}}
-            </div>
-            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  {{-- search bar section design end from here --}}
+
+  <div class="container">
+    <div class="row">
+      @if ($items->isNotEmpty())
+      @foreach ($items as $item)
+        <div class="mt-5 col-6 col-sm-4 col-md-2 col-lg-2">
+          <img class="md_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="This is a pizza">
+          <p class="text-center text-capitalize name_width">{{$item->Name}}</p>
+          @if ($item->Category === 'Fruit and vegetables')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          @if ($item->Category === 'Starchy food')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          @if ($item->Category === 'Dairy')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          @if ($item->Category === 'Protein')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          @if ($item->Category === 'Fat')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          <a href="{{ url('view', $item->id) }}" class="btn btn-primary text-center ms-5">See Details</a>
+        </div>
+        @endforeach
+      <div class="mt-5 py-5 text-center">
+        {{$items->links()}}
+      </div>
+      @endif
+    </div>
+  </div>
 @endsection

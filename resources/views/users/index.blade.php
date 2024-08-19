@@ -4,50 +4,58 @@
 @endsection
 
 @section('content')
-  @if ($items->isNotEmpty())
-    @foreach ($items as $item)
-      <div class="w-75 mx-auto">
-        <div class="mt-5 w-50 mx-auto">
-          <img class="md_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="This is a pizza">
-          <p class="text-center text-capitalize name_width">{{$item->Name}}</p>
-        </div>
-        <div class="mt-5">
-          {{-- title --}}
-          <div>
-            <h1>{{$item->Title}}</h1>
-          </div>
-          {{-- Components description --}}
-          <div class="mt-5">
-            <p class="text-capitalize py-3 fs-4">Components of this food:</p>
-          </div>
-          <div>
-            <ul class="list-unstyled">
-              @foreach(explode('||', $item->componentDescription) as $line)
-                <li>{{ $line }}</li>
-              @endforeach
-            </ul>
-          </div>
-          {{-- Positive description --}}
-          <div class="mt-5">
-            <p class="text-capitalize py-3 fs-4">Positive Side of this food:</p>
-          </div>
-          <div>
-            <ul class="list-unstyled">
-              @foreach(explode('||', $item->positiveDescription) as $line)
-                <li>{{ $line }}</li>
-              @endforeach
-            </ul>
-          </div>
-        
-          {{-- Negative description --}}
-          <div class="mt-5">
-            <p class="text-capitalize py-3 fs-4">Negative side of this food:</p>
-          </div>
-          <div>
-            <p>{{ $item->negativeDescription }}</p>
+  {{-- search bar section design start from here --}}
+  <form action="{{ route('searchItem') }}" method="GET">
+    @csrf
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="input-group">
+            <input type="search" name="search" class="form-control" placeholder="Search...">
+            <div class="input-group-append">
+              <input type="submit" value="Search" class="btn btn-primary">
+            </div>
           </div>
         </div>
       </div>
-    @endforeach
-  @endif
+    </div>
+  </form>
+  {{-- search bar section design end from here --}}
+  <div class="container">
+    <div class="row">
+      @if ($items->isNotEmpty())
+      @foreach ($items as $item)
+        <div class="mt-5 col-6 col-sm-4 col-md-2 col-lg-2">
+          <img class="md_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="This is a pizza">
+          <p class="text-center text-capitalize name_width">{{$item->Name}}</p>
+          @if ($item->Category === 'Fruit and vegetables')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          @if ($item->Category === 'Starchy food')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          @if ($item->Category === 'Dairy')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          @if ($item->Category === 'Protein')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          @if ($item->Category === 'Fat')
+              <p class="text-center">({{$item->Category}})</p>
+          @endif
+          <a href="{{ url('view', $item->id) }}" class="btn btn-primary text-center ms-5">See Details</a>
+        </div>
+        @endforeach
+        @else
+        <div class="mt-5 text-center">
+          <p class="text-warning fs-5">Your search item is not match in our website!</p>
+          <p class="fs-3">Please search a valuable another item on item name or category!</p>
+        </div>
+        <div class="mt-5 py-5 text-center">
+          {{$items->links()}}
+        </div>
+      @endif
+    </div>
+  </div>
 @endsection

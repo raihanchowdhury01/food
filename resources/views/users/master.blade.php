@@ -8,6 +8,7 @@
     <meta name="description" content="Food category review || This review help to you for choose the best healthy food item">
     <meta name="author" content="Raihan Chowdhury">
     <title>@yield('title')</title>
+    <link rel="stylesheet" href="style.css">
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="{{ asset('https://kit.fontawesome.com/cc76e3cc3d.js') }}" crossorigin="anonymous"></script>
     <style>
