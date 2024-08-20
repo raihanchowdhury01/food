@@ -1,1 +1,32 @@
 
+.about-us {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+.about-us .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #343a40;
+}
+.about-us .description {
+    font-size: 1.1rem;
+    color: #495057;
+}
+.about-us .team-member {
+    margin-top: 30px;
+}
+.about-us .team-member img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+.about-us .team-member h4 {
+    margin-top: 10px;
+    font-size: 1.25rem;
+    color: #343a40;
+}
+.about-us .team-member p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index(){
-        $data = Item::orderBy('created_at', 'DESC')->cursorPaginate(20);
+        $data = Item::orderBy('created_at', 'DESC')->cursorPaginate(3);
         return view('users.index', ['items' => $data]);
     }
 

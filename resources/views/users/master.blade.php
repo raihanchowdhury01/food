@@ -77,36 +77,61 @@
     <footer class="my-5">
 
         {{-- about form design start from here --}}
-        <div style="font-family: Sans-serif ;background-color:rgb(248,249,250);padding:18px;color:black" id="aboutUs"><br>
-            <h2 style="font-family: Sans-serif ;color:black; text-align: center">About Us !</h2>
-            <h2 style="font-family: Sans-serif ;text-align: center;">Welcome To <span id="W_Name1" >Food review and health tips</span></h2>
-            <p><span id="W_Name2">Food review and health tips</span> is a Professional <span id="W_Type1">Food review</span> Platform. Here we will only provide you with interesting content that you will enjoy very much. We are committed to providing you the best of <span id="W_Type2">Food review</span>, with a focus on reliability and <span id="W_Spec">food review</span>. we strive to turn our passion for <span id="W_Type3">Food review</span> into a thriving website. We hope you enjoy our <span id="W_Type4">Food review</span> as much as we enjoy giving them to you.</p>
-            <p>I will keep on posting such valuable anf knowledgeable information on my Website for all of you. Your love and support matters a lot.</p>
-            <p style="font-weight: bold; text-align: center;">Thank you For Visiting Our Site<br><br>
-            <span style="color: blue; font-size: 16px; font-weight: bold; text-align: center;">Have a great day !</span></p>
-        </div><br><br>
+        <section class="about-us text-center" id="aboutUs">
+            <div class="container">
+                <h1 class="title">About Us</h1>
+                <p class="description">
+                    Welcome to Food Survey RH, your go-to source for detailed reviews and information on a variety of foods. Our mission is to provide you with insightful and reliable content to help you make informed choices about your diet. Our team of passionate food enthusiasts is dedicated to bringing you the latest trends, health benefits, and delicious recipes that cater to your needs.
+                </p>
+                <div class="row">
+                    <div class="col-lg-4 team-member">
+                        {{-- <img src="https://via.placeholder.com/120" alt="Team Member 1"> --}}
+                        <h4>MD Raihan Chowdhury</h4>
+                        <p>Founder & CEO</p>
+                    </div>
+                    <div class="col-lg-4 team-member">
+                        {{-- <img src="https://via.placeholder.com/120" alt="Team Member 2"> --}}
+                        <h4>MD Raihan Hossan</h4>
+                        <p>Head Chef & Nutritionist</p>
+                    </div>
+                    <div class="col-lg-4 team-member">
+                        {{-- <img src="https://via.placeholder.com/120" alt="Team Member 3"> --}}
+                        <h4>MD Raihan Chowdhury</h4>
+                        <p>Food Critic & Blogger</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         {{-- about form design end from here --}}
         <hr class="w-75 mx-auto">
         
         {{-- contact form design start from here --}}
-        <div id="contact_form">
-            {{-- contact section design start from here --}}
-            
-            <h1 class="text-center">Contact Us !</h1>
-            <h2 style="text-align: center;">Welcome to <span>foodsurveyrh.com</span> !</h2>
-            <p style="font-size: 17px;" class="text-center">Please email us if you have any queries about the site, advertising, or anything else.</p>
-
-            <div style="text-align: center;">
-
-            <img alt="contact-us" style="width: 200px; border-radius: 100%" src="img/email.jpeg">
-
-            <p><i class="fas fa-envelope-open-text" style="color: #2c3e50; font-size: 20px;"></i> <b><i> <span id="W_Email"><a href="mailto:raihan24969@gmail.com">raihan24969@gmail.com</a></span></i></b><br>
-            <h3 style="color: #3e005d;">We will revert you as soon as possible...!</h3>
-            <p style="color: #3e005d; text-align: center;">Thank you for contacting us! <br><b>Have a great day</b></p>
+        <section id="contact_form" class="bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <h2 class="display-4 text-center">Get in Touch</h2>
+                        <p class="text-center lead">We'd love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out to us.</p>
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title">Contact Information</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <i class="bi bi-person-circle me-2"></i><strong>Name:</strong> MD Raihan Chowdhury
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="bi bi-telephone me-2"></i><strong>Phone:</strong> +8801965240019
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="bi bi-envelope me-2"></i><strong>Email:</strong> <span>raihan24969@gmail.com</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        
-            {{-- contact section design end from here --}}
-        </div>
+        </section>
         {{-- contact form design end from here --}}
         <div class="mt-5">
             <div class="d-none d-md-block">

@@ -46,6 +46,8 @@
               <p class="text-center">({{$item->Category}})</p>
           @endif
           <a href="{{ url('view', $item->id) }}" class="btn btn-primary text-center ms-5">See Details</a>
+          <a href="{{ url('edit', $item->id) }}" class="btn btn-warning text-center ms-5">Edit Details</a>
+          <a href="{{ url('delete', $item->id) }}" class="btn btn-danger text-center ms-5">Delete</a>
         </div>
         @endforeach
       <div class="mt-5 py-5 text-center">
