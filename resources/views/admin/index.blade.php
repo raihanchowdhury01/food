@@ -65,6 +65,13 @@
             @enderror
             <br>
 
+            <label for="keyword">Enter your food item keyword</label><br>
+            <textarea name="keyword" cols="30" rows="5" class="form-control form-control-lg">{{old('keyword')}}</textarea>
+            @error('keyword')
+                <p class="text-warning">{{$message}}</p>
+            @enderror
+            <br>
+
             <input type="submit" class="btn btn-primary" value="Submit">
         </form>
     </div>

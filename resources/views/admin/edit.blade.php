@@ -41,6 +41,9 @@
         <label for="negativeDescription">Enter your food item short description</label><br>
         <textarea name="negativeDescription" cols="30" rows="5" class="form-control form-control-lg">{{$data->negativeDescription}}</textarea><br>
 
+        <label for="keyword">Enter your food item keyword</label><br>
+        <textarea name="keyword" cols="30" rows="5" class="form-control form-control-lg">{{$data->Keyword}}</textarea><br>
+
         <input type="submit" class="btn btn-primary" value="Submit">
     </form>
 </div>

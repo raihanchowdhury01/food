@@ -45,6 +45,8 @@
           @if ($item->Category === 'Fat')
               <p class="text-center">({{$item->Category}})</p>
           @endif
+          
+          <div class="d-none">{{$item->Keyword}}</div>
           <a href="{{ url('view', $item->id) }}" class="btn btn-primary text-center ms-5">See Details</a>
           <a href="{{ url('edit', $item->id) }}" class="btn btn-warning text-center ms-5">Edit Details</a>
           <a href="{{ url('delete', $item->id) }}" class="btn btn-danger text-center ms-5">Delete</a>
