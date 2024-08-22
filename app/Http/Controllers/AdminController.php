@@ -104,6 +104,6 @@ class AdminController extends Controller
     public function search(Request $request){
         $search = $request->search;
         $items = Item::where('Name', 'LIKE','%'.$search.'%')->orWhere('Title', 'LIKE','%'.$search.'%')->cursorPaginate(20);
-        return view('admin.index', compact('items'));
+        return view('admin.shortView', compact('items'));
     }
 }
