@@ -5,7 +5,7 @@
 
 @section('content')
   {{-- search bar section design start from here --}}
-  <form action="{{ route('searchItem') }}" method="GET">
+  <form action="{{ route('searchItems') }}" method="GET">
     @csrf
 
     <div class="container mt-5">
