@@ -21,6 +21,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 Route::get('admin/dashboard', [AdminController::class, 'index'])->middleware(['auth', 'admin']);
+Route::get('admin/dashboard/seo', [AdminController::class, 'seoPage'])->middleware(['auth', 'admin']);
+Route::get('admin/dashboard/seo/fruit', [AdminController::class, 'fruitPage'])->middleware(['auth', 'admin']);
+Route::get('admin/dashboard/seo/starchy', [AdminController::class, 'starchyPage'])->middleware(['auth', 'admin']);
 Route::get('view/{id}', [AdminController::class, 'longView'])->middleware(['auth', 'admin']);
 Route::get('edit/{id}', [AdminController::class, 'editView'])->middleware(['auth', 'admin'])->name('editPage');
 Route::get('admin/dashboard/input', [AdminController::class, 'input'])->middleware(['auth', 'admin'])->name('inputPage');
@@ -32,6 +35,9 @@ Route::get('admin/dashboard/item', [AdminController::class, 'searchItem'])->midd
 
 
 Route::get('/', [UserController::class, 'index']);
+Route::get('health/service', [UserController::class, 'food'])->name('health');
+Route::get('diet/service', [UserController::class, 'less'])->name('diet');
+Route::get('fitness/service', [UserController::class, 'fit'])->name('fitness');
 Route::get('fruit/vegetables', [UserController::class, 'Garden']);
 Route::get('starchy/food', [UserController::class, 'Grains']);
 Route::get('dairy', [UserController::class, 'Delights']);

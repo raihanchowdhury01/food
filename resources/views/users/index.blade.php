@@ -5,7 +5,7 @@
 
 @section('content')
   {{-- search bar section design start from here --}}
-  <form action="{{ route('searchItem') }}" method="GET">
+  {{-- <form action="{{ route('searchItem') }}" method="GET">
     @csrf
 
     <div class="container mt-5">
@@ -20,42 +20,43 @@
         </div>
       </div>
     </div>
-  </form>
+  </form> --}}
   {{-- search bar section design end from here --}}
-  <div class="container">
+  <div class="container mt-5" style="width: 80%">
     <div class="row">
-      @if ($items->isNotEmpty())
-      @foreach ($items as $item)
-        <div class="mt-5 col-6 col-sm-4 col-md-2 col-lg-2">
-          <img class="md_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="This is a pizza">
-          <p class="text-center text-capitalize name_width">{{$item->Name}}</p>
-          @if ($item->Category === 'Fruit and vegetables')
-              <p class="text-center">({{$item->Category}})</p>
-          @endif
-          @if ($item->Category === 'Starchy food')
-              <p class="text-center">({{$item->Category}})</p>
-          @endif
-          @if ($item->Category === 'Dairy')
-              <p class="text-center">({{$item->Category}})</p>
-          @endif
-          @if ($item->Category === 'Protein')
-              <p class="text-center">({{$item->Category}})</p>
-          @endif
-          @if ($item->Category === 'Fat')
-              <p class="text-center">({{$item->Category}})</p>
-          @endif
-          <a href="{{ url('view', $item->id) }}" class="btn btn-primary text-center ms-5">See Details</a>
+        <div class="col-12 col-md-6">
+            <!-- Card 1 -->
+            <div class="d-flex gap-5 bg-white shadow-lg rounded p-2 mb-4">
+                <img src="img/logo.jpeg" alt="" style="width: 20%">
+                <div>
+                    <h5>Health Management Plan: A Comprehensive Guide</h5>
+                    <p>If you want to control your healt. Click on "see more"</p>
+                    <a href="{{ route('health') }}" class="text-decoration-none">See More</a>
+                </div>
+            </div>
         </div>
-        @endforeach
-        @else
-        <div class="mt-5 text-center">
-          <p class="text-warning fs-5">Your search item is not match in our website!</p>
-          <p class="fs-3">Please search a valuable another item on item name or category!</p>
-        </div>
-        <div class="mt-5 py-5 text-center">
-          {{$items->links()}}
-        </div>
-      @endif
+
+        <div class="col-12 col-md-6">
+            <!-- Card 2 -->
+            <div class="d-flex gap-5 bg-white shadow-lg rounded p-2 mb-4">
+                <img src="img/logo.jpeg" alt="" style="width: 20%">
+                <div>
+                    <h5>Diet Control Plan: A Guide for Healthy Living</h5>
+                    <p>If you want to control your diet. Click on "see more"</p>
+                    <a href="{{ route('diet') }}" class="text-decoration-none">See More</a>
+                </div>
+            </div>
+            
+            <!-- Card 3 (in the second column) -->
+          </div>
+          <div class="d-flex gap-5 bg-white shadow-lg rounded p-2 col-12 col-md-6">
+              <img src="img/logo.jpeg" alt="" style="width: 20%">
+              <div>
+                  <h5>Fitness Control Plan: A Comprehensive Guide</h5>
+                  <p>If you want to control your fitness. Click on "see more"</p>
+                  <a href="{{ route('fitness') }}" class="text-decoration-none">See More</a>
+              </div>
+          </div>
     </div>
-  </div>
+</div>
 @endsection

@@ -27,6 +27,9 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    public function seoPage(){
+        return view('admin.home');
+    }
     public function store(Request $request){
         $check = [
             'photo' => 'required|mimes:jpg,jpeg,png|max:300',
@@ -59,7 +62,7 @@ class AdminController extends Controller
         $data->componentDescription = implode('||', $descriptionLines);
         $data->positiveDescription = $request->positiveDescription;
         $data->negativeDescription = $request->negativeDescription;
-        $data->keyword = $request->keyword;
+        $data->Keyword = $request->keyword;
         $data->save();
     }
 
@@ -105,7 +108,7 @@ class AdminController extends Controller
         return back()->withSuccess('deleted', 'Product Deleted');
     }
 
-    public function searchItem(Request $request){
+    public function search(Request $request){
         $search = $request->search;
         $items = Item::where('Name', 'LIKE','%'.$search.'%')->orWhere('Title', 'LIKE','%'.$search.'%')->cursorPaginate(20);
         return view('admin.shortView', compact('items'));

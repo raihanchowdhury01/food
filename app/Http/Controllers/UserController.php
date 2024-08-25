@@ -12,6 +12,15 @@ class UserController extends Controller
         return view('users.index', ['items' => $data]);
     }
 
+    public function food(){
+        return view('users.health');
+    }
+    public function less(){
+        return view('users.diet');
+    }
+    public function fit(){
+        return view('users.fitness');
+    }
     public function rules(){
         return view('users.privacy');
     }

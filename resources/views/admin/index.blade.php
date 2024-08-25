@@ -51,21 +51,21 @@
             @enderror
             <br>
 
-            <label for="positiveDescription">Enter your food item short description</label><br>
+            <label for="positiveDescription">Enter your food item positive description</label><br>
             <textarea name="positiveDescription" cols="30" rows="5" class="form-control form-control-lg">{{old('positiveDescription')}}</textarea>
             @error('positiveDescription')
                 <p class="text-warning">{{$message}}</p>
             @enderror
             <br>
 
-            <label for="negativeDescription">Enter your food item short description</label><br>
+            <label for="negativeDescription">Enter your food item negative description</label><br>
             <textarea name="negativeDescription" cols="30" rows="5" class="form-control form-control-lg">{{old('negativeDescription')}}</textarea>
             @error('negativeDescription')
                 <p class="text-warning">{{$message}}</p>
             @enderror
             <br>
 
-            <label for="keyword">Enter your food item keyword</label><br>
+            <label for="keyword">Enter your food item Keyword</label><br>
             <textarea name="keyword" cols="30" rows="5" class="form-control form-control-lg">{{old('keyword')}}</textarea>
             @error('keyword')
                 <p class="text-warning">{{$message}}</p>
