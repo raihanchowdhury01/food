@@ -22,6 +22,10 @@
     </div>
   </form> --}}
   {{-- search bar section design end from here --}}
+  
+  <div class="container mt-2">
+    <img src="img/banner.png" alt="" style="width: 92%; height: 50vh; background-position: center; background-repeat: no-repeat; background-size: cover" class="ms-5">
+  </div>
   <div class="container mt-5" style="width: 80%">
     <div class="row">
         <div class="col-12 col-md-6">
