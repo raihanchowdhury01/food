@@ -2,7 +2,9 @@
 @section('title')
     Home~Page || food category review || This review help to you for choose the best healthy food item
 @endsection
-
+@section('key')
+<meta name="keywords" content="food review, health tips">
+@endsection
 @section('content')
   {{-- search bar section design start from here --}}
   {{-- <form action="{{ route('searchItem') }}" method="GET">

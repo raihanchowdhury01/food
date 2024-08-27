@@ -1,12 +1,15 @@
 @extends('users.master')
-@section('title')
-    Protein food category review || This review help to you for choose the healthy protein food item
-@endsection
-
 @section('content')
     @if ($items->isNotEmpty())
         @foreach ($items as $item)
             @if ($item->Category === 'Protein')
+            @section('title')
+                {{$item->mTitle}}
+            @endsection
+            @section('key')
+            <meta name="keywords" content="{{$item->Keyword}}">
+            <meta name="description" content="{{$item->Desc}}">
+            @endsection
             <div class="w-75 mx-auto">
                 <div class="mt-5 w-50 mx-auto">
                     <img class="smd_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="This is a pizza">

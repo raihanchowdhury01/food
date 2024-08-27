@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('img/logo.jpeg') }}" type="image/x-icon">
-    <meta name="keywords" content="food review, health tips">
-    <meta name="description" content="Food category review || This review help to you for choose the best healthy food item">
+    @yield('key')
     <meta name="author" content="Raihan Chowdhury">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="style.css">

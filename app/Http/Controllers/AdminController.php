@@ -40,6 +40,9 @@ class AdminController extends Controller
             'positiveDescription' => 'required',
             'negativeDescription' => 'required',
             'keyword' => 'required',
+            'alt' => 'required',
+            'mTitle' => 'required',
+            'Description' => 'required',
         ];
 
         $valid = Validator::make($request->all(), $check);
@@ -63,6 +66,9 @@ class AdminController extends Controller
         $data->positiveDescription = $request->positiveDescription;
         $data->negativeDescription = $request->negativeDescription;
         $data->Keyword = $request->keyword;
+        $data->alt = $request->alt;
+        $data->mTitle = $request->mTitle;
+        $data->Description = $request->Description;
         $data->save();
     }
 
@@ -77,6 +83,9 @@ class AdminController extends Controller
             'positiveDescription' => 'required',
             'negativeDescription' => 'required',
             'keyword' => 'required',
+            'alt' => 'required',
+            'mTitle' => 'required',
+            'Description' => 'required',
         ];
 
         $valid = Validator::make($request->all(), $check);
@@ -100,6 +109,9 @@ class AdminController extends Controller
         $data->positiveDescription = $request->positiveDescription;
         $data->negativeDescription = $request->negativeDescription;
         $data->Keyword = $request->keyword;
+        $data->alt = $request->alt;
+        $data->mTitle = $request->mTitle;
+        $data->Description = $request->Description;
         $data->save();
     }
     public function deleted($id){

@@ -8,10 +8,27 @@
     <div class="px-5 mb-5 mt-3">
         <form action="{{ route('storePage') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <label for="mTitle">Enter your page title</label><br>
+            <input type="text" value="{{old('mTitle')}}" name="mTitle" class="form-control form-control-lg"><br>
+            @error('mTitle')
+                <p class="text-warning">{{$message}}</p>
+            @enderror
 
+            <label for="Description">Enter your page Description</label><br>
+            <input type="text" value="{{old('Description')}}" name="Description" class="form-control form-control-lg"><br>
+            @error('Description')
+                <p class="text-warning">{{$message}}</p>
+            @enderror
+            
             <label for="photo" class="text-capitalize">Enter your food item photo</label><br>
             <input value="{{old('photo')}}" type="file" name="photo" class="form-control form-control-lg"><br>
             @error('photo')
+                <p class="text-warning">{{$message}}</p>
+            @enderror
+
+            <label for="alt">Enter your alt keyword</label><br>
+            <input type="text" value="{{old('alt')}}" name="alt" class="form-control form-control-lg"><br>
+            @error('alt')
                 <p class="text-warning">{{$message}}</p>
             @enderror
 

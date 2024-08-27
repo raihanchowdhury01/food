@@ -8,12 +8,26 @@
     <form action="{{ route('updatePage', $data->id) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
+        <label for="mTitle">Enter your page title</label><br>
+        <input type="text" value="{{$data->mTitle}}" name="mTitle" class="form-control form-control-lg"><br>
+        @error('mTitle')
+            <p class="text-warning">{{$message}}</p>
+        @enderror
+
+        <label for="Description">Enter your page Description</label><br>
+        <input type="text" value="{{$data->Description}}" name="Description" class="form-control form-control-lg"><br>
 
         @if ($data->Image)
             <img style="width: 150px; height: 150px;" src="{{ url('Uploaded_Photo/' . $data->Image) }}" alt="There is a food item image"><br>           
         @endif
         <label for="photo" class="text-capitalize">Enter your food item photo</label><br>
         <input value="{{old('photo', $data->Image)}}" type="file" name="photo" class="form-control form-control-lg"><br>
+
+        <label for="alt">Enter your alt keyword</label><br>
+        <input type="text" value="{{$data->alt}}" name="alt" class="form-control form-control-lg"><br>
+        @error('alt')
+            <p class="text-warning">{{$message}}</p>
+        @enderror
 
         <label for="name" class="text-capitalize">Enter your food item name</label><br>
         <input value="{{$data->Name}}" type="text" name="name" class="form-control form-control-lg"><br>
