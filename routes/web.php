@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VisitorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/welcome', function () {
@@ -21,9 +22,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 Route::get('admin/dashboard', [AdminController::class, 'index'])->middleware(['auth', 'admin']);
-Route::get('admin/dashboard/seo', [AdminController::class, 'seoPage'])->middleware(['auth', 'admin']);
-Route::get('admin/dashboard/seo/fruit', [AdminController::class, 'fruitPage'])->middleware(['auth', 'admin']);
-Route::get('admin/dashboard/seo/starchy', [AdminController::class, 'starchyPage'])->middleware(['auth', 'admin']);
 Route::get('view/{id}', [AdminController::class, 'longView'])->middleware(['auth', 'admin']);
 Route::get('edit/{id}', [AdminController::class, 'editView'])->middleware(['auth', 'admin'])->name('editPage');
 Route::get('admin/dashboard/input', [AdminController::class, 'input'])->middleware(['auth', 'admin'])->name('inputPage');
@@ -31,6 +29,7 @@ Route::post('item/added', [AdminController::class, 'store'])->middleware(['auth'
 Route::put('{id}/', [AdminController::class, 'update'])->middleware(['auth', 'admin'])->name('updatePage');
 Route::get('delete/{id}', [AdminController::class, 'deleted'])->middleware(['auth', 'admin']);
 Route::get('admin/dashboard/item', [AdminController::class, 'searchItem'])->middleware(['auth', 'admin'])->name('searchItems');
+Route::get('admin/dashboard/traffic', [VisitorController::class, 'traffic'])->middleware(['auth', 'admin']);
 
 
 

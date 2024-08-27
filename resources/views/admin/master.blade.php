@@ -34,7 +34,7 @@
               <ul class="d-flex list-unstyled gap-5">
                 <li class="nav-item"><a class="nav-link" href="{{ asset('admin/dashboard') }}">View</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ asset('admin/dashboard/input') }}">Input</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ asset('admin/dashboard/seo') }}">SEO</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ asset('admin/dashboard/traffic') }}">SEO</a></li>
               </ul>
                 {{-- <i class="fa-solid fa-bars"></i> --}}
             </div>
