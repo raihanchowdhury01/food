@@ -1,7 +1,10 @@
 @extends('users.master')
 @section('title')
-    Fat food category review || This review help to you for choose the healthy fat food item
+Healthy Fats: The Ultimate Guide to Nutrient-Rich Fat Foods for a Balanced Diet
 @endsection
+@section('meta')
+<meta name="description" content="Discover the essential role of healthy fats in your diet with our comprehensive guide. Explore nutrient-rich fat foods that boost energy, support brain health, and promote overall well-being. Learn how to incorporate these fats into your daily meals for optimal health.">
+<meta name="keywords" content="Fat foods, health benefits of fats, best fat-rich foods, fat food recipes, healthy fats UK, top fat foods USA, European fat food tips, fat foods for weight loss, dietary fats, healthy fat sources, fat food benefits, fat-rich diet UK USA Europe, healthy fats, fat foods, nutrient-rich fats, balanced diet, good fats, healthy fat sources, dietary fats, fat food benefits, brain health fats, energy-boosting fats, heart-healthy fats, omega-3 rich foods, unsaturated fats, fat food guide, fat nutrition facts">
 
 @section('content')
     @if ($items->isNotEmpty())

@@ -1,4 +1,11 @@
 @extends('users.master')
+@section('title')
+Top Starchy Foods: Health Benefits, Nutrition Facts, & Recipes | Your Guide to Healthy Eating
+@endsection
+@section('meta')
+<meta name="description" content="Explore the best starchy foods with our comprehensive guide. Discover the health benefits, nutritional value, and delicious recipes featuring potatoes, bread, rice, and more. Optimize your diet with these essential carbohydrates.">
+<meta name="keywords" content="Starchy foods UK, Best starchy food recipes USA, Nutritional facts starchy foods Europe, Whole grains benefits UK, Starchy food diet plan USA, Healthy starchy foods Europe, Potatoes health benefits UK, Starchy foods for weight loss USA, Starchy vegetables Europe, Starchy foods list UK">
+@endsection
 
 @section('content')
 @if ($items->isNotEmpty())

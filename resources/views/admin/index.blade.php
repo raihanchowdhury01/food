@@ -8,18 +8,6 @@
     <div class="px-5 mb-5 mt-3">
         <form action="{{ route('storePage') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <label for="mTitle">Enter your page title</label><br>
-            <input type="text" value="{{old('mTitle')}}" name="mTitle" class="form-control form-control-lg"><br>
-            @error('mTitle')
-                <p class="text-warning">{{$message}}</p>
-            @enderror
-
-            <label for="Description">Enter your page Description</label><br>
-            <input type="text" value="{{old('Description')}}" name="Description" class="form-control form-control-lg"><br>
-            @error('Description')
-                <p class="text-warning">{{$message}}</p>
-            @enderror
-            
             <label for="photo" class="text-capitalize">Enter your food item photo</label><br>
             <input value="{{old('photo')}}" type="file" name="photo" class="form-control form-control-lg"><br>
             @error('photo')
@@ -78,13 +66,6 @@
             <label for="negativeDescription">Enter your food item negative description</label><br>
             <textarea name="negativeDescription" cols="30" rows="5" class="form-control form-control-lg">{{old('negativeDescription')}}</textarea>
             @error('negativeDescription')
-                <p class="text-warning">{{$message}}</p>
-            @enderror
-            <br>
-
-            <label for="keyword">Enter your food item Keyword</label><br>
-            <textarea name="keyword" cols="30" rows="5" class="form-control form-control-lg">{{old('keyword')}}</textarea>
-            @error('keyword')
                 <p class="text-warning">{{$message}}</p>
             @enderror
             <br>

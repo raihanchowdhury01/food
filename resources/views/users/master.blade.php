@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('img/logo.jpeg') }}" type="image/x-icon">
-    @yield('key')
+    @yield('meta')
     <meta name="author" content="Raihan Chowdhury">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="style.css">

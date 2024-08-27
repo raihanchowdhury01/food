@@ -1,16 +1,15 @@
 @extends('users.master')
-
+@section('title')
+Fresh & Organic Fruits and Vegetables - Boost Your Health with Nature's Best
+@endsection
+@section('meta')
+<meta name="description" content="Explore our diverse collection of fresh, organic fruits and vegetables. Learn about their health benefits, nutrition facts, and find delicious recipes to incorporate them into your diet. Shop now to embrace a healthier lifestyle with nature’s finest produce!">
+<meta name="keywords" content="fresh fruits and vegetables, organic produce UK, buy fruits online USA, best vegetable recipes Europe, healthy eating tips, fruit and veg delivery UK, seasonal produce USA, nutrition facts vegetables, European organic farms, fresh fruit suppliers">
+@endsection
 @section('content')
 @if ($items->isNotEmpty())
 @foreach ($items as $item)
 @if ($item->Category === 'Fruit and vegetables')
-            @section('title')
-                {{$item->mTitle}}
-            @endsection
-            @section('key')
-            <meta name="keywords" content="{{$item->Keyword}}">
-            <meta name="description" content="{{$item->Desc}}">
-            @endsection
             <div class="w-75 mx-auto">
                 <div class="mt-5 w-50 mx-auto">
                     <img class="smd_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="{{$item->alt}}">
