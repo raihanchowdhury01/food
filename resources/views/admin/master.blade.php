@@ -22,6 +22,8 @@
         }
       }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
   </head>
   <body>
     {{-- header section design start form here --}}

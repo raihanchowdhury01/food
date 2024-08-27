@@ -8,6 +8,7 @@
 @endsection
 @section('content')
     <h1>Daily Visitors</h1>
+    <div id="chart"></div>
     <table class="table">
         <tr>
             <th>Date</th>
