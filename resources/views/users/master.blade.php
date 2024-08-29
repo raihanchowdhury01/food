@@ -27,6 +27,12 @@
             width: 500px;
             height: 500px;
         }
+        .about-us {
+        width: 60%;
+        margin: auto;
+        padding: 60px 0;
+        background: white;
+        }
       }
   </style>
   </head>

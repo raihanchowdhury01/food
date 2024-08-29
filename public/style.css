@@ -1,6 +1,6 @@
 
 .about-us {
-    width: 50%;
+    width: 80%;
     margin: auto;
     padding: 60px 0;
 }
@@ -29,6 +29,7 @@
 }
 
 .hoverEffect {
+    width: 90%;
     transition: box-shadow 0.3s ease;
 }
 

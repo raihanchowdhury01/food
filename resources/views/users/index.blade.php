@@ -23,7 +23,7 @@
     </div>
     <div class="col-lg-5">
       <div>
-        <svg width="200" height="200" class="svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <svg width="300" height="300" class="svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <!-- Background circle -->
           <circle cx="100" cy="100" r="95" fill="white" stroke="#e0e0e0" stroke-width="2"/>
   
@@ -58,8 +58,8 @@
     <div class="my-5">
       <h1 class="text-center">Our Service</h1>
     </div>
-    <div class="row">
-        <div class="hoverEffect d-flex gap-3 col-12 col-lg-4 border p-3 align-items-center">
+    <div class="d-md-flex gap-5">
+        <div class="hoverEffect d-md-flex gap-3 border p-3 align-items-center rounded">
             <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
             <div>
                 <h3>Health Tips</h3>
@@ -67,7 +67,7 @@
                 <a href="{{ route('health') }}" class="text-decoration-none">Learn More</a>
             </div>
         </div>
-        <div class="hoverEffect d-flex gap-3 col-12 col-lg-4 border p-3 align-items-center">
+        <div class="hoverEffect d-md-flex gap-3 border p-3 align-items-center rounded my-5 my-md-0">
             <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
             <div>
                 <h3>Health Tips</h3>
@@ -75,7 +75,7 @@
                 <a href="{{ route('diet') }}" class="text-decoration-none">Learn More</a>
             </div>
         </div>
-        <div class="hoverEffect d-flex gap-3 col-12 col-lg-4 border p-3 align-items-center">
+        <div class="hoverEffect d-md-flex gap-3 border p-3 align-items-center rounded">
             <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
             <div>
                 <h3>Health Tips</h3>
