@@ -1,6 +1,7 @@
 
 .about-us {
-    background-color: #f8f9fa;
+    width: 50%;
+    margin: auto;
     padding: 60px 0;
 }
 .about-us .title {
@@ -12,21 +13,25 @@
     font-size: 1.1rem;
     color: #495057;
 }
-.about-us .team-member {
-    margin-top: 30px;
+
+.scroll_menu li, .scroll_menu button{
+    font-size: 20px;
 }
-.about-us .team-member img {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+
+.picDiv>img{
+    height: 80vh;
 }
-.about-us .team-member h4 {
-    margin-top: 10px;
-    font-size: 1.25rem;
-    color: #343a40;
+
+.health_pic{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
 }
-.about-us .team-member p {
-    font-size: 0.9rem;
-    color: #6c757d;
+
+.hoverEffect {
+    transition: box-shadow 0.3s ease;
+}
+
+.hoverEffect:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

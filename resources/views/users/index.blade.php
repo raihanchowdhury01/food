@@ -1,68 +1,90 @@
 @extends('users.master')
 @section('title')
-    Home~Page || food category review || This review help to you for choose the best healthy food item
+  Food Insights & Trends | Explore Our Latest Food Survey review Blog
 @endsection
 @section('key')
-<meta name="keywords" content="food review, health tips">
+<meta name="keywords" content="food reviews, healthy food choices, food blogger, food analysis, food benefits, food risks, honest food reviews, healthy eating, food guide, food facts">
+<meta name="description" content="Uncover the truth behind your favorite foods. Our honest reviews and in-depth analysis help you make healthier choices. Explore the good and bad sides of food with expert insights on our food review blog.">
 @endsection
 @section('content')
-  {{-- search bar section design start from here --}}
-  {{-- <form action="{{ route('searchItem') }}" method="GET">
-    @csrf
-
-    <div class="container mt-5">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
-          <div class="input-group">
-            <input type="search" name="search" class="form-control" placeholder="Search...">
-            <div class="input-group-append">
-              <input type="submit" value="Search" class="btn btn-primary">
-            </div>
-          </div>
+{{-- banner section design start from here --}}
+<div class="container">
+  <div class="row gap-5">
+    <div class="col-lg-6">
+      <div>
+        <div>
+          <h1>Your Ultimate Guide to Healthy Eating and Tasty Treats</h1>
+          <p class="text-secondary">Welcome to food survey rh, where every bite tells a story of flavor and wellness. Dive into a world of delicious, healthy choices crafted with care and passion. Whether you’re seeking the freshest produce, savory meals, or nutritional insights, we’ve got you covered. Our expert reviews and curated recipes ensure that you can enjoy the best of what nature has to offer, all while making informed decisions for a healthier lifestyle. Join us on a culinary journey where taste meets nutrition, and discover how the right food can transform your life. Start exploring today, and let’s make every meal a celebration of health and happiness!</p>
+          <button class="btn btn-warning text-white mt-3 fs-5">
+            <a class="nav-link" href="{{ asset('#contact_form') }}">Contact Us</a>
+          </button>
         </div>
       </div>
     </div>
-  </form> --}}
-  {{-- search bar section design end from here --}}
+    <div class="col-lg-5">
+      <div>
+        <svg width="200" height="200" class="svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background circle -->
+          <circle cx="100" cy="100" r="95" fill="white" stroke="#e0e0e0" stroke-width="2"/>
   
-  <div class="container mt-2">
-    <img src="img/banner.png" alt="" style="width: 92%; height: 50vh; background-position: center; background-repeat: no-repeat; background-size: cover" class="ms-5">
+          <!-- Noodles Bowl -->
+          <ellipse cx="100" cy="150" rx="60" ry="20" fill="#f8b400" />
+          <path d="M40,150 Q100,120 160,150" fill="#f8b400" />
+          <ellipse cx="100" cy="150" rx="55" ry="15" fill="#f3e5ab" />
+  
+          <!-- Noodles -->
+          <path d="M70,120 Q75,125 80,120 T90,120 T100,120 T110,120 T120,120 T130,120" stroke="#eab543" stroke-width="3" fill="none" />
+          <path d="M75,125 Q80,130 85,125 T95,125 T105,125 T115,125 T125,125" stroke="#eab543" stroke-width="3" fill="none" />
+          
+          <!-- Chopsticks -->
+          <line x1="60" y1="50" x2="140" y2="120" stroke="#8e8e8e" stroke-width="8"/>
+          <line x1="65" y1="45" x2="145" y2="115" stroke="#c4c4c4" stroke-width="5"/>
+          
+          <!-- Decorative Elements -->
+          <circle cx="30" cy="30" r="10" fill="#f8b400" />
+          <circle cx="170" cy="30" r="10" fill="#f8b400" />
+          <circle cx="30" cy="170" r="10" fill="#f8b400" />
+          <circle cx="170" cy="170" r="10" fill="#f8b400" />
+      </svg>
+        {{-- <img class="img-fluid" src="img/head.webp" alt="banner image"> --}}
+      </div>
+    </div>
   </div>
-  <div class="container mt-5" style="width: 80%">
+</div>
+
+{{-- banner section design end from here --}}
+  {{-- card section design start form here --}}
+  <div class="container mt-5 mb-5">
+    <div class="my-5">
+      <h1 class="text-center">Our Service</h1>
+    </div>
     <div class="row">
-        <div class="col-12 col-md-6">
-            <!-- Card 1 -->
-            <div class="d-flex gap-5 bg-white shadow-lg rounded p-2 mb-4">
-                <img src="img/logo.jpeg" alt="" style="width: 20%">
-                <div>
-                    <h5>Health Management Plan: A Comprehensive Guide</h5>
-                    <p>If you want to control your healt. Click on "see more"</p>
-                    <a href="{{ route('health') }}" class="text-decoration-none">See More</a>
-                </div>
+        <div class="hoverEffect d-flex gap-3 col-12 col-lg-4 border p-3 align-items-center">
+            <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
+            <div>
+                <h3>Health Tips</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quod!</p>
+                <a href="{{ route('health') }}" class="text-decoration-none">Learn More</a>
             </div>
         </div>
-
-        <div class="col-12 col-md-6">
-            <!-- Card 2 -->
-            <div class="d-flex gap-5 bg-white shadow-lg rounded p-2 mb-4">
-                <img src="img/logo.jpeg" alt="" style="width: 20%">
-                <div>
-                    <h5>Diet Control Plan: A Guide for Healthy Living</h5>
-                    <p>If you want to control your diet. Click on "see more"</p>
-                    <a href="{{ route('diet') }}" class="text-decoration-none">See More</a>
-                </div>
+        <div class="hoverEffect d-flex gap-3 col-12 col-lg-4 border p-3 align-items-center">
+            <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
+            <div>
+                <h3>Health Tips</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quod!</p>
+                <a href="{{ route('diet') }}" class="text-decoration-none">Learn More</a>
             </div>
-            
-            <!-- Card 3 (in the second column) -->
-          </div>
-          <div class="d-flex gap-5 bg-white shadow-lg rounded p-2 col-12 col-md-6">
-              <img src="img/logo.jpeg" alt="" style="width: 20%">
-              <div>
-                  <h5>Fitness Control Plan: A Comprehensive Guide</h5>
-                  <p>If you want to control your fitness. Click on "see more"</p>
-                  <a href="{{ route('fitness') }}" class="text-decoration-none">See More</a>
-              </div>
-          </div>
+        </div>
+        <div class="hoverEffect d-flex gap-3 col-12 col-lg-4 border p-3 align-items-center">
+            <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
+            <div>
+                <h3>Health Tips</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quod!</p>
+                <a href="{{ route('fitness') }}" class="text-decoration-none">Learn More</a>
+            </div>
+        </div>
     </div>
 </div>
+
+  {{-- card section design end form here --}}
 @endsection

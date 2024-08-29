@@ -23,25 +23,31 @@
             width: 50%;
             margin-left: 20%;
         }
+        .svg{
+            width: 500px;
+            height: 500px;
+        }
       }
   </style>
   </head>
   <body>
     {{-- header section design start form here --}}
     <header>
-        <div class="d-flex justify-content-between py-3 px-5 bg-primary text-white align-items-center">
+        <div class="scroll_menu d-flex justify-content-between py-1 px-5 bg-white text-black align-items-center mb-5">
             <div>
                 <img style="weight: 60px; height: 60px; border-radius: 100%" src="{{ url('img/logo.jpeg') }}" alt="there is a logo image">
             </div>
             <div>
                 <div class="d-none d-md-block">
-                    <ul class="d-flex list-unstyled gap-5">
+                    <ul class="d-flex list-unstyled gap-5 align-items-center">
                         <li class="nav-item"><a class="nav-link" href="{{ asset('/') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('fruit/vegetables') }}">Fruit and vegetables</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('starchy/food') }}">Starchy food</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ asset('#aboutUs') }}">About Us</a></li>
+                        <button class="btn btn-warning text-white"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></button>
                     </ul>
                 </div>
                 <div class="d-block d-md-none">
@@ -57,17 +63,16 @@
                 <li class="nav-item"><a class="nav-link" href="{{ asset('starchy/food') }}">Starchy food</a></li>
                 <li class="nav-item py-3"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
-                <li class="nav-item pt-3"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
+                <li class="nav-item py-3"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ asset('#aboutUs') }}">About Us</a></li>
+                <button class="btn btn-warning text-white mt-3"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></button>
             </ul>
         </div>
     </header>
     {{-- header section design end form here --}}
 
     {{-- main section design start form here --}}
-    <main>
-        {{-- search section design start from here --}}
-
-        {{-- search section design end from here --}}
+    <main class="mt-5">
         @yield('content')
     </main>
     {{-- main section design end form here --}}
@@ -76,56 +81,47 @@
     <footer class="my-5">
 
         {{-- about form design start from here --}}
-        <section class="about-us text-center" id="aboutUs">
-            <div class="container">
-                <h1 class="title">About Us</h1>
-                <p class="description">
-                    Welcome to Food Survey RH, your go-to source for detailed reviews and information on a variety of foods. Our mission is to provide you with insightful and reliable content to help you make informed choices about your diet. Our team of passionate food enthusiasts is dedicated to bringing you the latest trends, health benefits, and delicious recipes that cater to your needs.
-                </p>
-                <div class="row">
-                    <div class="col-lg-4 team-member">
-                        {{-- <img src="https://via.placeholder.com/120" alt="Team Member 1"> --}}
-                        <h4>MD Raihan Chowdhury</h4>
-                        <p>Founder & CEO</p>
-                    </div>
-                    <div class="col-lg-4 team-member">
-                        {{-- <img src="https://via.placeholder.com/120" alt="Team Member 2"> --}}
-                        <h4>MD Raihan Hossan</h4>
-                        <p>Head Chef & Nutritionist</p>
-                    </div>
-                    <div class="col-lg-4 team-member">
-                        {{-- <img src="https://via.placeholder.com/120" alt="Team Member 3"> --}}
-                        <h4>MD Raihan Chowdhury</h4>
-                        <p>Food Critic & Blogger</p>
-                    </div>
+        <div class="container">
+            <section class="about-us text-center" id="aboutUs">
+                <div class="container">
+                    <h1 class="title">About Us</h1>
+                    <hr/>
+                    <p class="description">
+                        Welcome to Food Survey RH, your go-to source for detailed reviews and information on a variety of foods. Our mission is to provide you with insightful and reliable content to help you make informed choices about your diet. Our team of passionate food enthusiasts is dedicated to bringing you the latest trends, health benefits, and delicious recipes that cater to your needs.
+                    </p>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
         {{-- about form design end from here --}}
-        <hr class="w-75 mx-auto">
         
         {{-- contact form design start from here --}}
         <section id="contact_form" class="bg-light py-5">
             <div class="container">
+                <div class="">
+                    <h2 class="display-4 text-center">Get in Touch</h2>
+                    <p class="text-center lead">We'd love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out to us.</p>
+                </div>
                 <div class="row">
                     <div class="col-lg-6 mb-4">
-                        <h2 class="display-4 text-center">Get in Touch</h2>
-                        <p class="text-center lead">We'd love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out to us.</p>
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm mt-5">
                             <div class="card-body">
-                                <h4 class="card-title">Contact Information</h4>
-                                <ul class="list-unstyled">
-                                    <li class="mb-3">
-                                        <i class="bi bi-person-circle me-2"></i><strong>Name:</strong> MD Raihan Chowdhury
-                                    </li>
-                                    <li class="mb-3">
-                                        <i class="bi bi-telephone me-2"></i><strong>Phone:</strong> +8801965240019
-                                    </li>
-                                    <li class="mb-3">
-                                        <i class="bi bi-envelope me-2"></i><strong>Email:</strong> <span>raihan24969@gmail.com</span>
-                                    </li>
-                                </ul>
+                                <h4 class="card-title text-center">Contact Information</h4>
+                                <form action="">
+                                    @csrf
+                                    <label for="name">Enter your name</label><br>
+                                    <input type="text" name="name" class="form-control form-control-lg">
+                                    <label for="email" class="mt-3">Enter your email</label><br>
+                                    <input type="email" name="email" class="form-control form-control-lg mb-3">
+                                    <label for="message">Enter your message</label><br>
+                                    <textarea name="message" cols="30" rows="5" class="form-control form-control-lg"></textarea><br>
+                                    <button class="btn btn-warning" type="submit">Send</button>
+                                </form>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card shadow-sm mt-5">
+                            <img class="img-fluid" src="img/location.jpg" alt="location">
                         </div>
                     </div>
                 </div>
@@ -159,7 +155,7 @@
                     <li class="nav-item text-primary"><a href="privacy/policy" class="nav-link">Privacy Policy</a></li>
                 </ul>
             </div>
-            {{-- <div>
+            <div>
                 <ul class="d-flex justify-content-between w-25 mx-auto list-unstyled">
                     <li>
                         <a href="{{ asset('') }}"><i class="fa-brands fa-facebook fs-1"></i></a>
@@ -171,8 +167,8 @@
                         <a href="{{ asset('') }}"><i class="fa-brands fa-linkedin fs-1"></i></a>
                     </li>
                 </ul>
-            </div> --}}
-            <p class="text-center mt-5">Made by foodsurveyrh.com author. Copyright &copy; 2024</p>
+            </div>
+            <p class="text-center mt-5">Copyright &copy; 2024</p>
         </div>
     </footer>
     {{-- footer section end from here --}}
