@@ -38,10 +38,9 @@ Healthy Fats: The Ultimate Guide to Nutrient-Rich Fat Foods for a Balanced Diet
                     </div>
                 </div>
             </div>
-            @endif
-            @endforeach
+        @endforeach
             <div class="mt-5 py-5 text-center">
                 {{$items->links()}}
             </div>
-            @endif
+    @endif
 @endsection

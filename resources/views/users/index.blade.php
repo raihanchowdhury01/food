@@ -46,14 +46,39 @@
           <circle cx="30" cy="170" r="10" fill="#f8b400" />
           <circle cx="170" cy="170" r="10" fill="#f8b400" />
       </svg>
-        {{-- <img class="img-fluid" src="img/head.webp" alt="banner image"> --}}
       </div>
     </div>
   </div>
 </div>
 
 {{-- banner section design end from here --}}
-  {{-- card section design start form here --}}
+
+{{-- product service section design start from here --}}
+{{-- <div class="mt-5">
+  <h1 class="text-center text-capitalize fs-1">Our Product</h1>
+</div>
+@if ($items->isNotEmpty())
+    <div class="container d-md-flex gap-0 mx-auto mt-5">
+      @foreach ($items as $item) --}}
+        {{-- product service card section design start from here --}}
+        {{-- <div class="container">
+          <div class="position-relative card_shadow rounded">
+            <img class="w-100 rounded card_shadow" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="test pic">
+            <div class="container position-absolute bottom-0 text-white text-capitalize mb-3 fs-3">
+              <p>{{$item->Name}}</p>
+              <p class="fs-5 fw-bold">{{ $item->created_at->format('F j, Y g:i A') }}</p>
+            </div>
+          </div>
+        </div> --}}
+        {{-- product service card section design end from here --}}
+      {{-- @endforeach
+    </div>
+    <div class="mt-5 py-5 text-center">
+      {{$items->links()}}
+    </div>
+@endif --}}
+{{-- prodcut service section design end from here --}}
+  {{-- service card section design start form here --}}
   <div class="container mt-5 mb-5">
     <div class="my-5">
       <h1 class="text-center">Our Service</h1>
@@ -63,28 +88,28 @@
             <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
             <div>
                 <h3>Health Tips</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quod!</p>
+                <p>Top 10 Life-Changing Health Tips: Boost Your Well-Being and Transform Your Daily Routine Today!</p>
                 <a href="{{ route('health') }}" class="text-decoration-none">Learn More</a>
             </div>
         </div>
         <div class="hoverEffect d-md-flex gap-3 border p-3 align-items-center rounded my-5 my-md-0">
             <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
             <div>
-                <h3>Health Tips</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quod!</p>
+                <h3>Diet Tips</h3>
+                <p>Transform Your Health: 10 Simple Diet Tips for a Slimmer, Stronger, and Happier You!</p>
                 <a href="{{ route('diet') }}" class="text-decoration-none">Learn More</a>
             </div>
         </div>
         <div class="hoverEffect d-md-flex gap-3 border p-3 align-items-center rounded">
             <img class="health_pic img-fluid" src="img/health.jpeg" alt="health">
             <div>
-                <h3>Health Tips</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quod!</p>
+                <h3>Fitness Tips</h3>
+                <p>Transform Your Body: Discover Expert Fitness Tips for Achieving Peak Health and Energy in Just Weeks!</p>
                 <a href="{{ route('fitness') }}" class="text-decoration-none">Learn More</a>
             </div>
         </div>
     </div>
 </div>
 
-  {{-- card section design end form here --}}
+  {{-- service card section design end form here --}}
 @endsection

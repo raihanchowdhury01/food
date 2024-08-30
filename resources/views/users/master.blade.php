@@ -125,7 +125,7 @@
                     </div>
                     <div class="col-lg-6 mb-4">
                         <div class="card shadow-sm mt-5">
-                            <img class="img-fluid" src="img/location.jpg" alt="location">
+                            <img class="img-fluid" src="/img/location.jpg" alt="location">
                         </div>
                     </div>
                 </div>
