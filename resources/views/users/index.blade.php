@@ -54,14 +54,14 @@
 {{-- banner section design end from here --}}
 
 {{-- product service section design start from here --}}
-{{-- <div class="mt-5">
+<div class="mt-5">
   <h1 class="text-center text-capitalize fs-1">Our Product</h1>
 </div>
 @if ($items->isNotEmpty())
     <div class="container d-md-flex gap-0 mx-auto mt-5">
-      @foreach ($items as $item) --}}
+      @foreach ($items as $item)
         {{-- product service card section design start from here --}}
-        {{-- <div class="container">
+        <div class="container">
           <div class="position-relative card_shadow rounded">
             <img class="w-100 rounded card_shadow" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="test pic">
             <div class="container position-absolute bottom-0 text-white text-capitalize mb-3 fs-3">
@@ -69,14 +69,14 @@
               <p class="fs-5 fw-bold">{{ $item->created_at->format('F j, Y g:i A') }}</p>
             </div>
           </div>
-        </div> --}}
+        </div>
         {{-- product service card section design end from here --}}
-      {{-- @endforeach
+      @endforeach
     </div>
     <div class="mt-5 py-5 text-center">
       {{$items->links()}}
     </div>
-@endif --}}
+@endif
 {{-- prodcut service section design end from here --}}
   {{-- service card section design start form here --}}
   <div class="container mt-5 mb-5">

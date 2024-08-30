@@ -26,7 +26,7 @@ class UserController extends Controller
     }
 
     public function Garden(){
-        $data = Item::orderBy('created_at', 'DESC')->cursorPaginate(10);
+        $data = Item::orderBy('created_at', 'DESC')->cursorPaginate();
         return view('users.fruit', ['items' => $data]);
     }
 

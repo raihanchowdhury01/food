@@ -14,6 +14,9 @@
       .md_width{
             width: 100%;
         }
+        .category_body_color{
+            background-color: #f5f4f4;
+        }
       @media (min-width: 769px) {
           .md_width{
             width: 50%;
