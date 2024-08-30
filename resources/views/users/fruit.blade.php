@@ -7,6 +7,10 @@ Fresh & Organic Fruits and Vegetables - Boost Your Health with Nature's Best
 <meta name="keywords" content="fresh fruits and vegetables, organic produce UK, buy fruits online USA, best vegetable recipes Europe, healthy eating tips, fruit and veg delivery UK, seasonal produce USA, nutrition facts vegetables, European organic farms, fresh fruit suppliers">
 @endsection
 @section('content')
+<div class="container">
+    <img class="fruitBanner" src="/img/fruit&veggies.gif" alt="">
+</div>
+
 <div class="category_body_color">
     @if ($items->isNotEmpty())
         <div class="container row mx-auto mt-5">

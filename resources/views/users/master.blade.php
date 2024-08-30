@@ -17,6 +17,13 @@
         .category_body_color{
             background-color: #f5f4f4;
         }
+        .fruitBanner{
+            width: 100%;
+            height: 60vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
       @media (min-width: 769px) {
           .md_width{
             width: 50%;

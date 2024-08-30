@@ -7,34 +7,30 @@ Discover the Health Benefits & Varieties of Dairy Foods - Ultimate Guide
 <meta name="keywords" content="Dairy food benefits, Dairy nutrition facts, Best dairy products, Cheese varieties, Yogurt health benefits, Dairy suppliers, Healthy dairy choices, Dairy diet tips, Milk nutrition, Dairy products for weight loss, Dairy foods health benefits, Nutritional insights dairy, Dairy recipes UK, Cheese nutrition USA, Best yogurt brands Europe, Organic dairy products, Milk health benefits, Dairy superfoods, Healthy dairy snacks, Dairy diet tips, Low-fat dairy options, Dairy farming practices, Dairy food guide UK, Cheese varieties USA, Yogurt nutrition Europe">
 @endsection
 @section('content')
+<div class="container">
+    <img class="fruitBanner" src="/img/dairy.gif" alt="">
+</div>
+
+<div class="category_body_color">
     @if ($items->isNotEmpty())
-        @foreach ($items as $item)
-            @if ($item->Category === 'Dairy')
-            <div class="w-75 mx-auto">
-                <div class="mt-5 w-50 mx-auto">
-                    <img class="smd_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="{{$item->alt}}">
-                    <p class="text-center w-75 text-capitalize ps-5">{{$item->Name}}</p>
-                </div>
-                <div>
-                    {{-- title --}}
-                    <div>
-                        <h1>{{$item->Title}}</h1>
+        <div class="container row mx-auto mt-5">
+            @foreach ($items as $item)
+                @if ($item->Category === 'Dairy')
+                <div class="container col-4 col-sm-3 col-md-3 col-lg-2 my-3 bg-white p-3 rounded">
+                    <div class="card_shadow rounded">
+                    <img class="w-100 rounded card_shadow" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="{{$item->alt}}">
+                    <div class="container bottom-0 text-capitalize">
+                        <p class="text-secondary">{{ $item->created_at->format('F j, Y g:i A') }}</p>
+                        <p class="fs-5"><a href="{{ url('view', $item->id) }}" class="nav-link">{{$item->Name}}</a></p>
                     </div>
-                    {{-- short description --}}
-                    <div>
-                        @if (strlen($item->positiveDescription) > 500 || strlen($item->positiveDescription) < 500)
-                            <p>{{ substr($item->positiveDescription, 0, 500) }}...</p>
-                        @else
-                            <p>{{ $item->positiveDescription }}</p>
-                        @endif
-                        <a href="{{ url('view', $item->id) }}" class="btn btn-primary">See Details</a>
                     </div>
                 </div>
-            </div>
-            @endif
+                @endif
             @endforeach
-            <div class="mt-5 py-5 text-center">
-                {{$items->links()}}
-            </div>
-            @endif
+        </div>
+        <div class="mt-5 py-5 text-center">
+            {{$items->links()}}
+        </div>
+    @endif
+</div>
 @endsection

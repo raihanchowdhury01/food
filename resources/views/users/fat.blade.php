@@ -7,40 +7,30 @@ Healthy Fats: The Ultimate Guide to Nutrient-Rich Fat Foods for a Balanced Diet
 <meta name="keywords" content="Fat foods, health benefits of fats, best fat-rich foods, fat food recipes, healthy fats UK, top fat foods USA, European fat food tips, fat foods for weight loss, dietary fats, healthy fat sources, fat food benefits, fat-rich diet UK USA Europe, healthy fats, fat foods, nutrient-rich fats, balanced diet, good fats, healthy fat sources, dietary fats, fat food benefits, brain health fats, energy-boosting fats, heart-healthy fats, omega-3 rich foods, unsaturated fats, fat food guide, fat nutrition facts">
 
 @section('content')
+<div class="container">
+    <img class="fruitBanner" src="/img/fat.gif" alt="">
+</div>
+
+<div class="category_body_color">
     @if ($items->isNotEmpty())
-        @foreach ($items as $item)
-            @if ($item->Category === 'Fat')
-            @section('title')
-                {{$item->mTitle}}
-            @endsection
-            @section('key')
-            <meta name="keywords" content="{{$item->Keyword}}">
-            <meta name="description" content="{{$item->Desc}}">
-            @endsection
-            <div class="w-75 mx-auto">
-                <div class="mt-5 w-50 mx-auto">
-                    <img class="smd_width" style="border-radius: 100%" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="This is a pizza">
-                    <p class="text-center w-75 text-capitalize ps-5">{{$item->Name}}</p>
-                </div>
-                <div>
-                    {{-- title --}}
-                    <div>
-                        <h1>{{$item->Title}}</h1>
+        <div class="container row mx-auto mt-5">
+            @foreach ($items as $item)
+                @if ($item->Category === 'Fat')
+                <div class="container col-4 col-sm-3 col-md-3 col-lg-2 my-3 bg-white p-3 rounded">
+                    <div class="card_shadow rounded">
+                    <img class="w-100 rounded card_shadow" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="{{$item->alt}}">
+                    <div class="container bottom-0 text-capitalize">
+                        <p class="text-secondary">{{ $item->created_at->format('F j, Y g:i A') }}</p>
+                        <p class="fs-5"><a href="{{ url('view', $item->id) }}" class="nav-link">{{$item->Name}}</a></p>
                     </div>
-                    {{-- short description --}}
-                    <div>
-                        @if (strlen($item->positiveDescription) > 500 || strlen($item->positiveDescription) < 500)
-                            <p>{{ substr($item->positiveDescription, 0, 500) }}...</p>
-                        @else
-                            <p>{{ $item->positiveDescription }}</p>
-                        @endif
-                        <a href="{{ url('view', $item->id) }}" class="btn btn-primary">See Details</a>
                     </div>
                 </div>
-            </div>
-        @endforeach
-            <div class="mt-5 py-5 text-center">
-                {{$items->links()}}
-            </div>
+                @endif
+            @endforeach
+        </div>
+        <div class="mt-5 py-5 text-center">
+            {{$items->links()}}
+        </div>
     @endif
+</div>
 @endsection
