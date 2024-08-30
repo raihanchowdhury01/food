@@ -39,7 +39,7 @@
   <body>
     {{-- header section design start form here --}}
     <header>
-        <div class="scroll_menu d-flex justify-content-between py-1 px-5 bg-white text-black align-items-center mb-5">
+        <div class="scroll_menu d-flex justify-content-between py-1 px-5 bg-white text-black align-items-center mb-5 text-capitalize">
             <div>
                 <img style="weight: 60px; height: 60px; border-radius: 100%" src="{{ url('img/logo.jpeg') }}" alt="there is a logo image">
             </div>
@@ -52,7 +52,6 @@
                         <li class="nav-item"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ asset('#aboutUs') }}">About Us</a></li>
                         <button class="btn btn-warning text-white"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></button>
                     </ul>
                 </div>
@@ -62,7 +61,7 @@
             </div>
         </div>
         <div class="menu_list d-none d-md-none bg-white p-3 shadow-lg">
-            <i class="fa-solid fa-xmark fs-1 bg-danger p-2 rounded cursor-pointer close_btn" style="cursor: pointer"></i>
+            <i class="fa-solid fa-xmark fs-1 text-secondary p-2 rounded cursor-pointer close_btn" style="cursor: pointer;"></i>
             <ul class="list-unstyled gap-5">
                 <li class="nav-item"><a class="nav-link" href="{{ asset('/') }}">Home</a></li>
                 <li class="nav-item py-3"><a class="nav-link" href="{{ asset('fruit/vegetables') }}">Fruit and vegetables</a></li>
@@ -70,7 +69,6 @@
                 <li class="nav-item py-3"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
                 <li class="nav-item py-3"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ asset('#aboutUs') }}">About Us</a></li>
                 <button class="btn btn-warning text-white mt-3"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></button>
             </ul>
         </div>

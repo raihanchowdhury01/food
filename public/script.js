@@ -12,11 +12,9 @@ close_btn.addEventListener("click", ()=>{
 });
 
     document.addEventListener('DOMContentLoaded', function () {
-        // টেবিল থেকে ডেটা সংগ্রহ করুন
         const table = document.querySelector('.table');
         const rows = table.querySelectorAll('tr');
-
-        // ডেটা সংগ্রহ
+        
         const dates = [];
         const visits = [];
 
@@ -51,26 +49,3 @@ close_btn.addEventListener("click", ()=>{
         chart.render();
     });
 
-
-    const menu = document.querySelector(".scroll_menu");
-    const menu_Height = menu.offsetTop;
-    
-    window.addEventListener("scroll", ()=>{
-        if(window.pageYOffset > menu_Height){
-            menu.classList.add("fixed-top");
-            menu.classList.add("fixed-top");
-            menu.classList.add("bg-black");
-            menu.classList.add("text-white");
-            menu.classList.remove("bg-white");
-            menu.classList.remove("text-black");
-            menu.style.transition = "0.3s ease-in-out";
-        }else{
-            menu.classList.remove("fixed-top");
-            menu.classList.remove("fixed-top");
-            menu.classList.remove("bg-black");
-            menu.classList.remove("text-white");
-            menu.classList.add("bg-white");
-            menu.classList.add("text-black");
-            menu.style.transition = "0.3s ease-in-out";
-        }
-    });
