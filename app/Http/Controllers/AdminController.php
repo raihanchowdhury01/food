@@ -65,54 +65,44 @@ class AdminController extends Controller
         $data->componentDescription = implode('||', $descriptionLines);
         $data->positiveDescription = $request->positiveDescription;
         $data->negativeDescription = $request->negativeDescription;
-        $data->Keyword = $request->keyword;
         $data->alt = $request->alt;
-        $data->mTitle = $request->mTitle;
-        $data->Description = $request->Description;
         $data->save();
     }
 
     public function update($id, Request $request){
-        $data = Item::findOrFail($id);
-        $check = [
-            'photo' => 'required|mimes:jpg,jpeg,png|max:300',
-            'name' => 'required',
-            'item' => 'required',
-            'title' => 'required',
-            'componentDescription' => 'required',
-            'positiveDescription' => 'required',
-            'negativeDescription' => 'required',
-            'keyword' => 'required',
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'photo' => 'required',
             'alt' => 'required',
-            'mTitle' => 'required',
-            'Description' => 'required',
-        ];
+            'item' => 'required',
+            'title' => 'required|string|max:255',
+            'componentDescription' => 'required|string',
+            'positiveDescription' => 'required|string',
+            'negativeDescription' => 'required|string',
+        ]);
 
-        $valid = Validator::make($request->all(), $check);
-        if($valid->fails()){
-            return redirect()->route('editPage')->withInput()->withErrors($valid->errors());
+        $item = Item::find($id);
+        if (!$item) {
+            return redirect()->route('editPage', ['id' => $id])->with('error', 'Item not found.');
         }
 
         if($request->photo != ''){
-            File::delete(public_path('Uploaded_Photo/'. $data->Image));
+            File::delete(public_path('Uploaded_Photo/'. $item->Image));
             $image = $request->photo;
             $ext = $image->getClientOriginalExtension();
             $imageName = time(). '.' . $ext;
-            $data->Image = $imageName;
+            $item->Image = $imageName;
             $image->move(public_path('Uploaded_Photo'), $imageName); 
         }
-        $data->Name = $request->name;
-        $data->Category = $request->item;
-        $data->Title = $request->title;
+        $item->Name = $request->name;
+        $item->Category = $request->item;
+        $item->Title = $request->title;
         $descriptionLines = explode("\n", $request->componentDescription);
-        $data->componentDescription = implode('||', $descriptionLines);
-        $data->positiveDescription = $request->positiveDescription;
-        $data->negativeDescription = $request->negativeDescription;
-        $data->Keyword = $request->keyword;
-        $data->alt = $request->alt;
-        $data->mTitle = $request->mTitle;
-        $data->Description = $request->Description;
-        $data->save();
+        $item->componentDescription = implode('||', $descriptionLines);
+        $item->positiveDescription = $request->positiveDescription;
+        $item->negativeDescription = $request->negativeDescription;
+        $item->alt = $request->alt;
+        $item->save();
     }
     public function deleted($id){
         $data = Item::where('id', $id)->first();
