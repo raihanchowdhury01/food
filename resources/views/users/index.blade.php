@@ -6,6 +6,9 @@
 <meta name="keywords" content="food reviews, healthy food choices, food blogger, food analysis, food benefits, food risks, honest food reviews, healthy eating, food guide, food facts">
 <meta name="description" content="Uncover the truth behind your favorite foods. Our honest reviews and in-depth analysis help you make healthier choices. Explore the good and bad sides of food with expert insights on our food review blog.">
 @endsection
+@section('contact_bar')
+<button class="btn btn-warning text-white"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></button>
+@endsection
 @section('content')
 {{-- banner section design start from here --}}
 <div class="container">
@@ -54,29 +57,31 @@
 {{-- banner section design end from here --}}
 
 {{-- product service section design start from here --}}
-<div class="mt-5">
-  <h1 class="text-center text-capitalize fs-1">Our Product</h1>
-</div>
-@if ($items->isNotEmpty())
-    <div class="container d-md-flex gap-0 mx-auto mt-5">
-      @foreach ($items as $item)
-        {{-- product service card section design start from here --}}
-        <div class="container">
-          <div class="position-relative card_shadow rounded">
-            <img class="w-100 rounded card_shadow" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="test pic">
-            <div class="container position-absolute bottom-0 text-white text-capitalize mb-3 fs-3">
-              <p>{{$item->Name}}</p>
-              <p class="fs-5 fw-bold">{{ $item->created_at->format('F j, Y g:i A') }}</p>
+<div class="service">
+  <div class="mt-5">
+    <h1 class="text-center text-capitalize fs-1">Our Product</h1>
+  </div>
+  @if ($items->isNotEmpty())
+      <div class="container d-md-flex gap-0 mx-auto mt-3">
+        @foreach ($items as $item)
+          {{-- product service card section design start from here --}}
+          <div class="container">
+            <div class="position-relative card_shadow rounded">
+              <img class="w-100 rounded card_shadow" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="test pic">
+              <div class="container position-absolute bottom-0 text-white text-capitalize mb-3 fs-3">
+                <p>{{$item->Name}}</p>
+                <p class="fs-5 fw-bold">{{ $item->created_at->format('F j, Y g:i A') }}</p>
+              </div>
             </div>
           </div>
-        </div>
-        {{-- product service card section design end from here --}}
-      @endforeach
-    </div>
-    <div class="mt-5 py-5 text-center">
-      {{$items->links()}}
-    </div>
-@endif
+          {{-- product service card section design end from here --}}
+        @endforeach
+      </div>
+      <div class="my-5 mb-5 text-center">
+        {{$items->links()}}
+      </div>
+  @endif
+</div>
 {{-- prodcut service section design end from here --}}
   {{-- service card section design start form here --}}
   <div class="container mt-5 mb-5">
@@ -113,3 +118,73 @@
 
   {{-- service card section design end form here --}}
 @endsection
+
+@section('aboutUs')
+    {{-- about form design start from here --}}
+    <div class="container">
+      <section class="about-us" id="aboutUs">
+          <div class="container">
+              <h1 class="title text-center">About Us</h1>
+              <hr class="w-25 mx-auto"/>
+              <div class="container mx-auto row gap-5">
+                <div class="col-12 col-md-7">
+                  <div class="description">
+                    <h1 class="fs-3">About Food Survey RH: Your Trusted Guide to Healthy and Informed Food Choices</h1>
+                    <div class="my-5">
+                      <p>At Food Survey RH, we are dedicated to providing in-depth reviews, insights, and expert advice on the healthiest food options. Our mission is to empower you with the knowledge to make informed decisions about what you eat. Discover the good and bad sides of food items with our comprehensive analyses, all crafted to support your journey to a healthier lifestyle.</p>
+                    </div>
+                    <ul class="list-unstyled">
+                      <li class="d-flex items-center gap-2"><i class="fa-solid fa-check text-success"></i><h1 class="fs-5">Expert Food Reviews:<span class="fw-normal fs-6"> Unbiased evaluations of various food categories to help you choose what's best for your health.</span></h1></li>
+                      <li class="d-flex items-center gap-2"><i class="fa-solid fa-check text-success"></i><h1 class="fs-5">Health-Focused Content:<span class="fw-normal fs-6"> Articles and guides aimed at enhancing your well-being through smarter food choices.</span></h1></li>
+                      <li class="d-flex items-center gap-2"><i class="fa-solid fa-check text-success"></i><h1 class="fs-5"> Global Perspective:<span class="fw-normal fs-6"> Catering to a diverse audience in the UK, USA, and Europe with localized food recommendations.</span></h1></li>
+                      <li class="d-flex items-center gap-2"><i class="fa-solid fa-check text-success"></i><h1 class="fs-5"> User-Centric Approach:<span class="fw-normal fs-6"> Tailored advice and tips based on the latest nutritional research and trends.</span></h1></li>
+                      <li class="d-flex items-center gap-2"><i class="fa-solid fa-check text-success"></i><h1 class="fs-5"> Transparency & Trust:<span class="fw-normal fs-6"> We are committed to providing honest reviews and transparent information to help you navigate the complexities of modern food choices.</span></h1></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <img src="/img/me.jpg" alt="hero" class="img-fluid w-100">
+                </div>
+              </div>
+          </div>
+      </section>
+  </div>
+  {{-- about form design end from here --}}
+@endsection
+
+{{-- contact section design start from here --}}
+@section('contact')
+<section id="contact_form" class="bg-light py-5">
+  <div class="container">
+      <div class="">
+          <h2 class="display-4 text-center">Get in Touch</h2>
+          <p class="text-center lead">We'd love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out to us.</p>
+      </div>
+      <div class="row">
+          <div class="col-lg-6">
+              <div class="card shadow-sm mt-5 contacts">
+                  <div class="card-body">
+                      <h4 class="card-title text-center">Contact Information</h4>
+                      <form action="">
+                          @csrf
+                          <label for="name">Enter your name</label><br>
+                          <input type="text" name="name" class="form-control form-control-lg">
+                          <label for="email" class="mt-3">Enter your email</label><br>
+                          <input type="email" name="email" class="form-control form-control-lg mb-3">
+                          <label for="message">Enter your message</label><br>
+                          <textarea name="message" cols="30" rows="5" class="form-control form-control-lg"></textarea><br>
+                          <button class="btn btn-warning" type="submit">Message</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="card shadow-sm mt-5">
+                  <img class="img-fluid" src="/img/location.jpg" alt="location">
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+@endsection
+{{-- contact section design end from here --}}

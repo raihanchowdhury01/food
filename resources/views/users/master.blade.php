@@ -7,7 +7,7 @@
     @yield('meta')
     <meta name="author" content="Raihan Chowdhury">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset('/style.css') }}">
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="{{ asset('https://kit.fontawesome.com/cc76e3cc3d.js') }}" crossorigin="anonymous"></script>
     <style>
@@ -24,26 +24,6 @@
             background-position: center;
             background-size: cover;
         }
-      @media (min-width: 769px) {
-          .md_width{
-            width: 50%;
-            margin-left: 25%;
-        }
-          .smd_width{
-            width: 50%;
-            margin-left: 20%;
-        }
-        .svg{
-            width: 500px;
-            height: 500px;
-        }
-        .about-us {
-        width: 60%;
-        margin: auto;
-        padding: 60px 0;
-        background: white;
-        }
-      }
   </style>
   </head>
   <body>
@@ -62,7 +42,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
-                        <button class="btn btn-warning text-white"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></button>
+                        @yield('contact_bar')
                     </ul>
                 </div>
                 <div class="d-block d-md-none">
@@ -79,82 +59,82 @@
                 <li class="nav-item py-3"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
                 <li class="nav-item py-3"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
-                <button class="btn btn-warning text-white mt-3"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></button>
             </ul>
         </div>
     </header>
     {{-- header section design end form here --}}
 
     {{-- main section design start form here --}}
-    <main class="mt-5">
+    <main class="mt-5 f">
         @yield('content')
     </main>
     {{-- main section design end form here --}}
 
     {{-- footer section start from here --}}
-    <footer class="my-5">
+    <footer class="mt-5">
 
         {{-- about form design start from here --}}
-        <div class="container">
-            <section class="about-us text-center" id="aboutUs">
-                <div class="container">
-                    <h1 class="title">About Us</h1>
-                    <hr/>
-                    <p class="description">
-                        Welcome to Food Survey RH, your go-to source for detailed reviews and information on a variety of foods. Our mission is to provide you with insightful and reliable content to help you make informed choices about your diet. Our team of passionate food enthusiasts is dedicated to bringing you the latest trends, health benefits, and delicious recipes that cater to your needs.
-                    </p>
-                </div>
-            </section>
+        <div class="mt-5 f">
+            @yield('aboutUs')
         </div>
         {{-- about form design end from here --}}
         
         {{-- contact form design start from here --}}
-        <section id="contact_form" class="bg-light py-5">
-            <div class="container">
-                <div class="">
-                    <h2 class="display-4 text-center">Get in Touch</h2>
-                    <p class="text-center lead">We'd love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out to us.</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
-                        <div class="card shadow-sm mt-5">
-                            <div class="card-body">
-                                <h4 class="card-title text-center">Contact Information</h4>
-                                <form action="">
-                                    @csrf
-                                    <label for="name">Enter your name</label><br>
-                                    <input type="text" name="name" class="form-control form-control-lg">
-                                    <label for="email" class="mt-3">Enter your email</label><br>
-                                    <input type="email" name="email" class="form-control form-control-lg mb-3">
-                                    <label for="message">Enter your message</label><br>
-                                    <textarea name="message" cols="30" rows="5" class="form-control form-control-lg"></textarea><br>
-                                    <button class="btn btn-warning" type="submit">Send</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card shadow-sm mt-5">
-                            <img class="img-fluid" src="/img/location.jpg" alt="location">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="">
+            @yield('contact')
+        </div>
         {{-- contact form design end from here --}}
-        <div class="mt-5">
-            <div class="d-none d-md-block">
-                <ul class="gap-2 d-flex justify-content-between list-unstyled px-2 footerMenu mx-sm-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ asset('/') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ asset('fruit/vegetables') }}">Fruit and vegetables</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ asset('starchy/food') }}">Starchy food</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ asset('#aboutUs') }}">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></li>
-                    <li class="nav-item text-primary"><a href="/privacy/policy" class="nav-link">Privacy Policy</a></li>
-                </ul>
+
+        
+
+        <div class="">
+            <div class="d-none d-md-block shadow-sm border p-3">
+                <div class="row gap-5 items-center w-100">
+                    <div class="col-10 col-md-4">
+                        <img src="/img/logo.jpeg" alt="logo" class="w-25">
+                        <p>Explore unbiased food reviews and health insights to make informed dietary choices with Food Survey RH.</p>
+                        <div>
+                            <ul class="d-flex gap-5 justify-content-between w-25 list-unstyled">
+                                <li>
+                                    <a href="{{ asset('https://www.facebook.com/MdRaihanChowdhuryNo.99/') }}" target="_blank"><i class="fa-brands fa-facebook fs-1"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{ asset('https://www.linkedin.com/in/md-abdul-kader-702209202/') }}" target="_blank"><i class="fa-brands fa-linkedin fs-1"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-10 col-md-7 d-md-flex justify-content-between">
+                        <div>
+                            <h1 class="fs-3 text-secondary">Service</h1>
+                            <ul class="list-unstyled">
+                                <li class="nav-item"><a class="nav-link" href="{{ asset('/') }}">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ asset('fruit/vegetables') }}">Fruit and vegetables</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ asset('starchy/food') }}">Starchy food</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h1 class="fs-3 text-secondary">Support</h1>
+                            <ul class="list-unstyled">
+                                <li class="nav-item"><a class="nav-link" href="{{ asset('#aboutUs') }}">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h1 class="fs-3 text-secondary">Privacy Policy</h1>
+                            <ul class="list-unstyled">
+                                <li class="nav-item text-primary"><a href="/privacy/policy" class="nav-link">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-2">
+                <div>
+                    <p>&copy;Copyright 2024</p>
+                </div>
             </div>
             <div class="d-block d-md-none text-center px-3 my-5">
                 <ul class="list-unstyled gap-5 border py-3">
@@ -163,26 +143,23 @@
                     <li class="nav-item"><a class="nav-link" href="{{ asset('starchy/food') }}">Starchy food</a></li>
                     <li class="nav-item py-3"><a class="nav-link" href="{{ asset('dairy') }}">Dairy</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ asset('protein') }}">Protein</a></li>
-                    <li class="nav-item pt-3"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
-                    <li class="nav-item pt-3"><a class="nav-link" href="{{ asset('#aboutUs') }}">About Us</a></li>
-                    <li class="nav-item pt-3"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></li>
+                    <li class="nav-item py-3"><a class="nav-link" href="{{ asset('fat') }}">Fat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ asset('#aboutUs') }}">About Us</a></li>
+                    <li class="nav-item py-3"><a class="nav-link" href="{{ asset('#contact_form') }}">Contact</a></li>
                     <li class="nav-item text-primary"><a href="privacy/policy" class="nav-link">Privacy Policy</a></li>
+                    <div class="mt-5">
+                        <ul class="d-flex justify-content-between w-25 mx-auto list-unstyled">
+                            <li>
+                                <a href="{{ asset('https://www.facebook.com/MdRaihanChowdhuryNo.99/') }}" target="_blank"><i class="fa-brands fa-facebook fs-1"></i></a>
+                            </li>
+                            <li>
+                                <a href="{{ asset('https://www.linkedin.com/in/md-abdul-kader-702209202/') }}" target="_blank"><i class="fa-brands fa-linkedin fs-1"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-center mt-5">Copyright &copy; 2024</p>
                 </ul>
             </div>
-            <div>
-                <ul class="d-flex justify-content-between w-25 mx-auto list-unstyled">
-                    <li>
-                        <a href="{{ asset('') }}"><i class="fa-brands fa-facebook fs-1"></i></a>
-                    </li>
-                    <li>   
-                        <a href="{{ asset('') }}"><i class="fa-brands fa-twitter fs-1"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{ asset('') }}"><i class="fa-brands fa-linkedin fs-1"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <p class="text-center mt-5">Copyright &copy; 2024</p>
         </div>
     </footer>
     {{-- footer section end from here --}}
