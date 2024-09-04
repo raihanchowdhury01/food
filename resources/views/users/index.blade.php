@@ -65,9 +65,9 @@
       <div class="container d-md-flex gap-0 mx-auto mt-3">
         @foreach ($items as $item)
           {{-- product service card section design start from here --}}
-          <div class="container">
+          <div class="container my-5">
             <div class="position-relative card_shadow rounded">
-              <img class="w-100 rounded card_shadow" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="test pic">
+              <a href="{{ url('view', $item->id) }}" class="nav-link"><img class="w-100 rounded card_shadow" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="test pic"></a>
               <div class="container position-absolute bottom-0 text-white text-capitalize mb-3 fs-3">
                 <p>{{$item->Name}}</p>
                 <p class="fs-5 fw-bold">{{ $item->created_at->format('F j, Y g:i A') }}</p>

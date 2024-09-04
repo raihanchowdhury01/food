@@ -47,7 +47,7 @@ Fresh & Organic Fruits and Vegetables - Boost Your Health with Nature's Best
                 @if ($item->Category === 'Fruit and vegetables')
                 <div class="container col-6 col-md-3 my-1 bg-white p-3 rounded">
                     <div class="rounded">
-                        <img class="w-100 rounded" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="{{$item->alt}}">
+                        <a href="{{ url('view', $item->id) }}" class="nav-link"><img class="w-100 rounded" src="{{ url('Uploaded_Photo/'. $item->Image) }}" alt="{{$item->alt}}"></a>
                         <div class="bottom-0 text-capitalize">
                             <p class="fs-5"><a href="{{ url('view', $item->id) }}" class="nav-link">{{$item->Name}}</a></p>
                             @if (strlen($item->Title) > 50 || strlen($item->Title) < 50)
